@@ -1,0 +1,314 @@
+{% extends 'base/base.html' %}
+
+{% block body %}
+<style type="text/css">
+	a {
+		text-decoration: none;
+		color: black;
+	}
+	a:hover {
+		text-decoration: none;
+		color: black;
+	}
+	.img1 {
+		margin-top: 1rem;
+	}
+	.p_head {
+		opacity: 0.7;
+		font-size: 1.1rem;
+	}
+	.header {
+		background: linear-gradient(
+				rgba(255, 255, 255, 0.5),
+				rgba(255, 255, 255, 0.5)
+			),
+			url("/media/images/baker.jpg")
+				center;
+		background-size: cover;
+		width: 100%;
+		height: 40vh;
+	}
+	/* nav_bar */
+	.tiny {
+		width: 100%;
+		height: 0.4vh;
+		background: brown;
+	}
+	.tinyr {
+		width: 98%;
+		height: 0.4vh;
+		background: brown;
+	}
+	.tinys {
+		width: 100%;
+		height: 0.3vh;
+		background: brown;
+		opacity: 0.7rem
+	}
+	.tinyse {
+		width: 98%;
+		height: 0.2vh;
+		background: brown;
+		opacity: 0.5rem;
+	}
+	.nav {
+		width: 100%;
+		height: fit-content;
+		position: sticky;
+		top: 0;
+		z-index: 1;
+	}
+	.navs {
+		width: 98%;
+		margin: auto;
+		height: fit-content;
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+	}
+	.nave {
+		width: 98%;
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+	}
+	.p_hear {
+		opacity: 0.7;
+		cursor: pointer;
+		padding-top: 1rem; 
+		font-size: 1.1rem;
+	}
+	.p_hear:hover {
+		color: brown;
+		opacity: 0.9;
+	}
+	#f_hear {
+		font-size: 2.3rem;
+		cursor: pointer;
+		font-weight: lighter; 
+	}
+
+	/* blog */
+
+	.fa1 {
+		font-size: 1.7rem;
+		font-weight: 900;
+	}
+	.fa2 {
+		font-size: 2.5rem;
+		font-weight: 900;
+		cursor: pointer;
+	}
+	.mag1 {
+		width: 100%;
+		height: 50vh;
+	}
+	.blogy1 {
+		width: 48%;
+		height: 100vh;
+	}
+	.blogs {
+		width: 98%;
+		margin: auto;
+		height: fit-content;
+	}
+	.blog_flex {
+		width: 100%;
+		height: fit-content;
+		display: flex;
+		justify-content: space-around;
+		align-items: base-line;
+		flex-wrap: wrap;
+	}
+
+
+	@media only screen and (orientation: portrait) {
+	a {
+		text-decoration: none;
+		color: black;
+	}
+	a:hover {
+		text-decoration: none;
+		color: black;
+	}
+	.img1 {
+		margin-top: 1rem;
+	}
+	.p_head {
+		opacity: 0.7;
+		font-size: 1.1rem;
+	}
+	.header {
+		background: linear-gradient(
+				rgba(255, 255, 255, 0.5),
+				rgba(255, 255, 255, 0.5)
+			),
+			url("/media/images/baker.jpg")
+				center;
+		background-size: cover;
+		width: 100%;
+		height: 40vh;
+	}
+	/* nav_bar */
+	.tiny {
+		width: 100%;
+		height: 0.4vh;
+		background: brown;
+	}
+	.tinyr {
+		width: 98%;
+		height: 0.4vh;
+		background: brown;
+	}
+	.tinys {
+		width: 100%;
+		height: 0.3vh;
+		background: brown;
+		opacity: 0.7rem
+	}
+	.tinyse {
+		width: 98%;
+		height: 0.2vh;
+		background: brown;
+		opacity: 0.5rem;
+	}
+	.nav {
+		width: 100%;
+		height: fit-content;
+		position: sticky;
+		top: 0;
+		z-index: 1;
+	}
+	.navs {
+		width: 98%;
+		margin: auto;
+		height: fit-content;
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+	}
+	.nave {
+		width: 98%;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		overflow-x: scroll; 
+	}
+	.p_hear {
+		opacity: 0.7;
+		cursor: pointer;
+		padding-top: 1rem; 
+		font-size: 1.1rem;
+		padding-left: 2rem;
+	}
+	.p_hear:hover {
+		color: brown;
+		opacity: 0.9;
+	}
+	#f_hear {
+		font-size: 2.3rem;
+		cursor: pointer;
+		font-weight: lighter; 
+	}
+
+	/* blog */
+
+	.fa1 {
+		font-size: 1.3rem;
+		font-weight: 800;
+		display: none;
+	}
+	.fa2 {
+		font-size: 2.2rem;
+		font-weight: 800;
+		cursor: pointer;
+		padding: 0;
+		margin: 0;
+	}
+	.blogy1 {
+		width: 99%;
+		height: fit-content;
+		display: flex;
+		justify-content: space-between;
+		align-items: base-line;
+		margin-bottom: 1rem;
+	}
+	.mag1 {
+		width: 38%;
+		height: 15vh;
+	}
+	.blogs {
+		width: 98%;
+		margin: auto;
+		height: fit-content;
+		margin-right: 1rem;
+	}
+	.blog_flex {
+		width: 100%;
+		height: fit-content;
+		display: flex;
+		justify-content: space-around;
+		align-items: base-line;
+		flex-direction: column;
+	}
+	.blogf {
+		width: 60%;
+		height: fit-content;
+		margin-bottom: 1rem;
+	}
+
+}
+</style>
+
+<div class="header">
+<center>
+<img src="/media/images/life.png" class="img1">
+<p class="p_head">Life Baker Group of Schools</p>
+</center>
+</div>
+<div class="nav">
+	<div class="tiny"></div>
+	<div class="navs">
+		<div class="nave">
+			<p class="p_hear">ALL</p>
+			<p class="p_hear">LATEST</p>
+			<p class="p_hear">BUSINESS</p>
+			<p class="p_hear" style="word-wrap: no-wrap;">SCI-TECH</p>
+			<p class="p_hear">PHONES</p>
+			<p class="p_hear">WORLD</p>
+			<p class="p_hear">OPINION</p>
+			<p class="p_hear">LIFE & STYLE</p>
+			<p class="p_hear">T-MAGEZINE</p>
+			<p class="p_hear">SPORT</p>
+			<p class="p_hear">CRICKET</p>
+			<p class="p_hear">BLOGS</p>
+			<p class="p_hear">ARCHIVE</p>
+			<p class="p_hear">OTHER</p>
+		</div>
+		<i class="fa fa-bars" id="f_hear"></i>
+	</div>
+	<div class="tinys"></div>
+</div>
+
+<p class="p_hears" style="padding-left: 1rem;padding-top: 1rem;">All Blogs</p>
+
+<center>
+	<h1 class="h_head">BLOGS<h1>
+</center>
+
+<div class="blogs">
+	<div class="blog_flex">
+		{% for all in all %}
+		<div class="blogy1">
+			<div class="mag1" style="background: url({{ all.img.url }});background-size: cover;"></div>
+			<div class="blogf">
+				<h2 class="fa2"><a href="{% url 'article' all.number all.topic %}">{{ all.topic }}</a></h2>
+				<p class="p_head">Life Baker | {{ all.date }}</p>
+				<h3 class="fa1">{{ all.subtopic }}</h3>
+			</div>
+		</div>
+		{% endfor %}
+	</div>
+</div>
+
+{% endblock %}

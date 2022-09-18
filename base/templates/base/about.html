@@ -1,0 +1,544 @@
+{% extends 'base/base.html' %}
+
+{% block body %}
+<style type="text/css">
+	a {
+		text-decoration: none;
+		color: black;
+	}
+	a:hover {
+		text-decoration: none;
+		color: black;
+	}
+	.img1 {
+		margin-top: 1rem;
+	}
+	.img6 {
+		width: 5%;
+		height: 6vh;
+	}
+	.p_head {
+		opacity: 0.8;
+		font-size: 1.4rem;
+	}
+	.header {
+		background: linear-gradient(
+				rgba(255, 255, 255, 0.5),
+				rgba(255, 255, 255, 0.5)
+			),
+			url("/media/images/baker.jpg")
+				center;
+		background-size: cover;
+		width: 100%;
+		height: 40vh;
+	}
+	/* nav_bar */
+	.tiny {
+		width: 100%;
+		height: 0.4vh;
+		background: brown;
+	}
+	.tinyu {
+		width: 98%;
+		height: 0.4vh;
+		background: brown;
+	}
+	.reg {
+		padding-left: 1rem;
+	}
+	.tinyr {
+		width: 98%;
+		height: 0.4vh;
+		background: brown;
+	}
+	.tinys {
+		width: 100%;
+		height: 0.3vh;
+		background: brown;
+		opacity: 0.7rem
+	}
+	.tinyse {
+		width: 98%;
+		height: 0.2vh;
+		background: brown;
+		opacity: 0.5rem;
+	}
+	.nav {
+		width: 100%;
+		height: fit-content;
+		position: sticky;
+		top: 0;
+		z-index: 1;
+	}
+	.navs {
+		width: 98%;
+		margin: auto;
+		height: fit-content;
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		overflow-x: visible; 
+	}
+	.nave {
+		width: 98%;
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+	}
+	.p_hear {
+		opacity: 0.7;
+		cursor: pointer;
+		padding-top: 1rem; 
+		font-size: 1.1rem;
+	}
+	.p_hear:hover {
+		color: brown;
+		opacity: 0.9;
+	}
+	#f_hear {
+		font-size: 2.3rem;
+		cursor: pointer;
+		font-weight: lighter; 
+	}
+	#f_hears {
+		font-size: 1.7rem;
+		cursor: pointer;
+		font-weight: 60; 
+		opacity: 0.7;
+	}
+	.nap {
+		width: 100%;
+		height: fit-content;
+	}
+	.naps {
+		width: 98%;
+		margin: auto;
+		height: fit-content;
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		overflow-x: visible; 
+	}
+	.img4 {
+		width: 15%;
+	}
+	.p_hears {
+		opacity: 0.7;
+		font-size: 1.7rem;
+		padding-left: 1rem;
+		padding-top: 0.8rem;
+	}
+
+	/* blog */
+
+	.blogi {
+		width: 65%;
+		height: fit-content;
+		margin: auto;
+	}
+
+	.img2 {
+		width: 98%;
+		height: 85vh;
+	}
+	.p_heard {
+		opacity: 0.7;
+		cursor: pointer;
+		padding-left: 2rem; 
+		font-size: 1.5rem;
+		padding-top: 0.8rem;
+		font-weight: 800;
+	}
+	.h_head {
+		font-size: 4.3rem;
+		font-weight: 900;
+		padding-top: 0.8rem;
+	}
+	.h_hea {
+		font-size: 1.7rem;
+		font-weight: lighter;
+		padding-top: 0.3rem;
+		opacity: 0.9;
+	}
+	.h_heas {
+		font-size: 1.9rem;
+		font-weight: 900;
+		padding-top: 0.3rem;
+	}
+	.we {
+		padding-left: 4rem;
+	}
+	.once {
+		width: 100%;
+		height: 0.1vh;
+		background-color: brown;
+		opacity: 0.6;
+	}
+	.twice {
+		width: 100%;
+		height: 0.3vh;
+		background-color: brown;
+		opacity: 0.6;
+	}
+	.aga {
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		width: 18%;
+	}
+	.tre {
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	/* comment */
+
+	.comment {
+		width: 100%;
+		height: fit-content;
+	}
+	.com {
+		width: 96%;
+		margin: auto;
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		margin-top: 2rem;
+	}
+	.in1 {
+		width: 47%;
+		height: 8vh;
+		box-shadow: 2px 5px 10px rgb(71, 71, 71);
+		border-radius: 4rem;
+		border: none;
+		padding-left: 1rem;
+		border-color: white;
+	}
+	.in2 {
+		width: 98%;
+		box-shadow: 2px 5px 10px rgb(71, 71, 71);
+		border-radius: 2rem;
+		border: none;
+		padding-left: 1rem;
+		border-color: white;
+		font-size: 2rem;
+		height: 37vh;
+		padding-top: 1rem;
+	}
+	.come {
+		width: 96%;
+		margin: auto;
+		margin-top: 2rem;
+		text-align: center;
+	}
+	.btn {
+		width: 98%;
+		height: 8vh;
+		box-shadow: 2px 5px 10px rgb(71, 71, 71);
+		border-radius: 3rem;
+		border: none;
+		color: white;
+		background: brown;
+		text-align: center;
+		margin-top: 1rem;
+		font-size: 2.3rem;
+	}
+
+	@media only screen and (orientation: portrait) {
+	a {
+		text-decoration: none;
+		color: black;
+	}
+	a:hover {
+		text-decoration: none;
+		color: black;
+	}
+	.img1 {
+		margin-top: 1rem;
+	}
+	.img6 {
+		width: 8%;
+		height: 6vh;
+	}
+	.p_head {
+		opacity: 0.7;
+		font-size: 1.1rem;
+	}
+	.header {
+		background: linear-gradient(
+				rgba(255, 255, 255, 0.5),
+				rgba(255, 255, 255, 0.5)
+			),
+			url("/media/images/baker.jpg")
+				center;
+		background-size: cover;
+		width: 100%;
+		height: 40vh;
+	}
+	/* nav_bar */
+	.tiny {
+		width: 100%;
+		height: 0.4vh;
+		background: brown;
+	}
+	.tinyr {
+		width: 98%;
+		height: 0.4vh;
+		background: brown;
+	}
+	.tinys {
+		width: 100%;
+		height: 0.3vh;
+		background: brown;
+		opacity: 0.7rem
+	}
+	.tinyse {
+		width: 98%;
+		height: 0.2vh;
+		background: brown;
+		opacity: 0.5rem;
+	}
+	.nav {
+		width: 100%;
+		height: fit-content;
+		position: sticky;
+		top: 0;
+		z-index: 1;
+	}
+	.navs {
+		width: 98%;
+		margin: auto;
+		height: fit-content;
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+	}
+	.nave {
+		width: 96%;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		overflow-x: scroll; 
+	}
+	.p_hear {
+		opacity: 0.7;
+		cursor: pointer;
+		padding-top: 1rem; 
+		font-size: 1.1rem;
+		padding-left: 0.5rem;
+	}
+	.p_hear:hover {
+		color: brown;
+		opacity: 0.9;
+	}
+	#f_hear {
+		font-size: 2.3rem;
+		cursor: pointer;
+		font-weight: lighter; 
+	}
+	/* blog */
+
+	.blogi {
+		width: 95%;
+		height: fit-content;
+		margin-left: 1rem;
+	}
+
+	.img2 {
+		width: 98%;
+		height: 55vh;
+	}
+	.p_heard {
+		opacity: 0.7;
+		cursor: pointer;
+		padding-left: 2rem; 
+		font-size: 1.5rem;
+		padding-top: 0.8rem;
+		font-weight: 800;
+	}
+	.h_head {
+		font-size: 4.3rem;
+		font-weight: 900;
+		padding-top: 0.8rem;
+	}
+	.h_hea {
+		font-size: 1.7rem;
+		font-weight: lighter;
+		padding-top: 0.3rem;
+		opacity: 0.9;
+	}
+	.h_heas {
+		font-size: 1.9rem;
+		font-weight: 900;
+		padding-top: 0.3rem;
+	}
+	.we {
+		padding-left: 0.8rem;
+	}
+	.once {
+		width: 100%;
+		height: 0.1vh;
+		background-color: brown;
+		opacity: 0.6;
+	}
+	.twice {
+		width: 100%;
+		height: 0.3vh;
+		background-color: brown;
+		opacity: 0.6;
+	}
+	.aga {
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		width: 18%;
+	}
+	.tre {
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	/* comment */
+
+	.comment {
+		width: 100%;
+		height: fit-content;
+	}
+	.com {
+		width: 96%;
+		margin: auto;
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		margin-top: 2rem;
+	}
+	.in1 {
+		width: 47%;
+		height: 8vh;
+		box-shadow: 2px 5px 10px rgb(71, 71, 71);
+		border-radius: 4rem;
+		border: none;
+		padding-left: 1rem;
+		border-color: white;
+	}
+	.in2 {
+		width: 98%;
+		box-shadow: 2px 5px 10px rgb(71, 71, 71);
+		border-radius: 2rem;
+		border: none;
+		padding-left: 1rem;
+		border-color: white;
+		font-size: 2rem;
+		height: 37vh;
+		padding-top: 1rem;
+	}
+	.come {
+		width: 96%;
+		margin: auto;
+		margin-top: 2rem;
+		text-align: center;
+	}
+	.btn {
+		width: 98%;
+		height: 8vh;
+		box-shadow: 2px 5px 10px rgb(71, 71, 71);
+		border-radius: 3rem;
+		border: none;
+		color: white;
+		background: brown;
+		text-align: center;
+		margin-top: 1rem;
+		font-size: 2.3rem;
+	}
+}
+</style>
+
+<div class="header">
+<center>
+<img src="/media/images/life.png" class="img1">
+<p class="p_head">Life Baker Group of Schools</p>
+</center>
+</div>
+<div class="nav">
+	<div class="tiny"></div>
+	<div class="navs">
+		<div class="nave">
+			<p class="p_hear">LATEST</p>
+			<p class="p_hear">PAKISTAN</p>
+			<p class="p_hear">BUSINESS</p>
+			<p class="p_hear">SCI-TECH</p>
+			<p class="p_hear">PHONES</p>
+			<p class="p_hear">WORLD</p>
+			<p class="p_hear">OPINION</p>
+			<p class="p_hear">LIFE & STYLE</p>
+			<p class="p_hear">T-MAGEZINE</p>
+			<p class="p_hear">SPORT</p>
+			<p class="p_hear">CRICKET</p>
+			<p class="p_hear">BLOGS</p>
+			<p class="p_hear">ARCHIVE</p>
+			<p class="p_hear">OTHER</p>
+		</div>
+		<i class="fa fa-bars" id="f_hear"></i>
+	</div>
+	<div class="tinys"></div>
+</div>
+<br />
+<div class="nap">
+	<div class="tiny"></div>
+	<marquee>
+	<div class="naps">
+			{% for alle in alle %}
+				<p class="p_heard">{{ alle.topic }}</p><img src="/media/images/life.png" class="img6"></img>
+			{% endfor %}
+	</div>
+	</marquee>
+	<div class="tinys"></div>
+</div>
+
+<h3 class="p_hears"><i class="fa fa-home" id="f_hear"></i> <i class="fa fa-home" id="f_hear"></i> {{ appl.topic }}</h3>
+
+<div class="blogi">
+	<img src="{{ appl.img.url }}" class="img2">
+	<p class="p_hear">{{ appl.subtopic }} | {{ appl.date }}</p>
+	<div class="tinys"></div>
+	<br>
+	<div class="we">
+		<h1 class="h_head">{{ appl.topic }}</h1>
+		<h3 class="h_hea">{{ appl.subtopic }}</h3>
+		<br>
+		<div class="once"></div>
+		<div class="tre">
+			<p class="p_head" style="padding-top: 0.7rem;">Life Baker | {{ appl.date }}</p>
+			<p class="p_head">|</p>
+			<div class="aga">
+				<i class="fa fa-bars" id="f_hears"></i>
+				<i class="fa fa-bars" id="f_hears"></i>
+				<i class="fa fa-bars" id="f_hears"></i>
+			</div>
+		</div>
+		<div class="twice"></div>
+		<h3 class="h_heas">{{ appl.header }}</h3>
+		<h3 class="h_hea">{{ appl.description }}</h3>
+		<br>
+	</div>
+</div>
+<h2 class="reg">Comment</h2>
+<center>
+<div class="tinyu"></div>
+</center>
+<div class="comment">
+	<div class="com">
+		<input type="text" placeholder="Name" class="in1" required>
+		<input type="text" placeholder="Email" class="in1" required>
+	</div>
+	<div class="come">
+		<textarea type="Textfield" placeholder="Comment" class="in2" required></textarea>
+		<button class="btn">Post</button>
+	</div>
+</div>
+<br />
+{% endblock %}
