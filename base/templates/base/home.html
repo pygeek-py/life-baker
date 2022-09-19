@@ -81,6 +81,7 @@
 	.p_hear:hover {
 		color: brown;
 		opacity: 0.9;
+		font-weight: 970;
 	}
 	#f_hear {
 		font-size: 2.3rem;
@@ -162,6 +163,16 @@
 		align-items: center;
 		flex-wrap: wrap;
 	}
+	#f_hearp {
+		font-size: 1.4rem;
+		cursor: pointer;
+		font-weight: lighter; 
+	}
+	.buy {
+		background: transparent;
+		border: none;
+	}
+
 
 	@media only screen and (orientation: portrait) {
 	a {
@@ -245,12 +256,19 @@
 	.p_hear:hover {
 		color: brown;
 		opacity: 0.9;
+		font-weight: 970;
 	}
 	#f_hear {
 		font-size: 2.3rem;
 		cursor: pointer;
 		font-weight: lighter; 
 	}
+	#f_hearp {
+		font-size: 1.5rem;
+		cursor: pointer;
+		font-weight: lighter; 
+	}
+
 
 	/* blogs */
 
@@ -334,6 +352,13 @@
 		align-items: center;
 		flex-wrap: wrap;
 	}
+	#rem {
+		display: none;
+	}
+	.buy {
+		background: transparent;
+		border: none;
+	}
 	}
 </style>
 
@@ -347,19 +372,19 @@
 	<div class="tiny"></div>
 	<div class="navs">
 		<div class="nave">
-			<p class="p_hear"><a href="{% url 'every' %}">ALL</a></p>
-			<p class="p_hear">LATEST</p>
-			<p class="p_hear">BUSINESS</p>
-			<p class="p_hear" style="word-wrap: no-wrap;">SCI-TECH</p>
-			<p class="p_hear">PHONES</p>
-			<p class="p_hear">WORLD</p>
-			<p class="p_hear">OPINION</p>
-			<p class="p_hear">LIFE & STYLE</p>
-			<p class="p_hear">T-MAGEZINE</p>
-			<p class="p_hear">SPORT</p>
-			<p class="p_hear">CRICKET</p>
-			<p class="p_hear">BLOGS</p>
-			<p class="p_hear">ARCHIVE</p>
+			<p class="p_hear"><a href="{% url 'every' %}" class="p_hear">ALL</a></p>
+			<p class="p_hear"><a href="{% url 'home' %}" class="p_hear">LATEST</a></p>
+			<p class="p_hear"><a href="{% url 'sport' %}" class="p_hear">Sport</a></p>
+			<p class="p_hear"><a href="{% url 'computer' %}" class="p_hear">Computer</a></p>
+			<p class="p_hear"><a href="{% url 'examination' %}" class="p_hear">Examination</a></p>
+			<p class="p_hear"><a href="{% url 'hall' %}" class="p_hear">Hall</a></p>
+			<p class="p_hear"><a href="{% url 'enter' %}" class="p_hear">Enterpreneur</a></p>
+			<p class="p_hear"><a href="{% url 'academic' %}" class="p_hear">Academic</a></p>
+			<p class="p_hear"><a href="{% url 'megaphone' %}" class="p_hear">Megaphone</a></p>
+			<p class="p_hear">Hostel</p>
+			<p class="p_hear">Library</p>
+			<p class="p_hear">School</p>
+			<p class="p_hear">Admin</p>
 			<p class="p_hear">OTHER</p>
 		</div>
 		<i class="fa fa-bars" id="f_hear"></i>
@@ -379,7 +404,7 @@
 		<div class="blogy1">
 			<div class="mag1" style="background: url({{ all.img.url }});background-size: cover;"></div>
 			<h2 class="fa2"><a href="{% url 'article' all.number all.topic %}">{{ all.topic }}</a></h2>
-			<p class="p_head">Life Baker | {{ all.date }}</p>
+			<p class="p_head">Life Baker | {{ all.date }} | <button class="buy"><i class="fa fa-bars" id="f_hearp"></i></button></p>
 			<h3 class="fa1">{{ all.subtopic }}</h3>
 		</div>
 		{% endfor %}
@@ -409,7 +434,7 @@
 		<div class="blogy1">
 			<div class="mag1" style="background: url({{ thr.img.url }});background-size: cover;"></div>
 			<h2 class="fa2"><a href="{% url 'article' thr.number thr.topic %}">{{ thr.topic }}</a></h2>
-			<p class="p_head">Life Baker | {{ thr.date }}</p>
+			<p class="p_head">Life Baker | {{ thr.date }} | <button class="buy"><i class="fa fa-bars" id="f_hearp"></i></button></p>
 			<h3 class="fa1">{{ thr.subtopic }}</h3>
 		</div>
 	{% endfor %}
